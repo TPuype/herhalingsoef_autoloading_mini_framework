@@ -1,0 +1,25 @@
+{% extends "_template.twig" %}
+
+{% block title %}Add user
+{% endblock %}
+{% block content %}
+	<div class="container">
+		<form action="" method="post">
+			<h1>New user:</h1>
+			<label for="firstName">First name:</label>
+			<input type="text" name="firstName">
+			{% if errors.firstName is defined %}
+				<p>{{errors.firstName}}</p>
+			{% endif %}
+			<br>
+			<label for="lastName">Last name</label>
+			<input type="text" name="lastName">
+			{% if errors.lastName is defined %}
+				<p>{{errors.lastName}}</p>
+			{% endif %}
+			<br>
+			<input type="submit" value="Save">
+		</form>
+		{{message}}
+	</div>
+{% endblock %}
